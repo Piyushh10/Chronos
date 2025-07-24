@@ -9,7 +9,7 @@ Chronos is a modern Android app that empowers you to schedule and manage reminde
 - **Google Sign-In**: Secure authentication with your Google account.
 - **Reminders**: Add, edit, and delete reminders with title, date/time, notes, and an optional image.
 - **Image Picker & Upload**: Attach images from your gallery or camera, uploaded to Cloudinary and displayed in the app.
-- **Notifications**: Get timely local notifications for your reminders (Android 13+ permission supported).
+- **Notifications**: Get timely local notifications for your reminders.
 - **AI Greeting & Share**: Instantly generate and share motivational messages using an AI API.
 - **Dynamic Theming**: Follows system light/dark mode with a manual toggle.
 - **Modern UI**: Built with Jetpack Compose (Material 3) for a beautiful, responsive experience.

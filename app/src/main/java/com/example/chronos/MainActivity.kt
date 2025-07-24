@@ -58,10 +58,20 @@ import androidx.activity.result.contract.ActivityResultContracts
 import android.widget.Toast
 import android.os.Build
 import androidx.core.content.ContextCompat
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.Text
+import androidx.compose.foundation.Image
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 
 enum class AppThemeMode { SYSTEM, LIGHT, DARK }
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -116,43 +126,60 @@ class MainActivity : ComponentActivity() {
                         snackbarHost = { SnackbarHost(snackbarHostState) },
                         topBar = {
                             Row(
-                                modifier = Modifier.fillMaxWidth().padding(8.dp),
-                                horizontalArrangement = Arrangement.End
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(8.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
                             ) {
-                                IconButton(onClick = { themeMenuExpanded = true }) {
-                                    Icon(
-                                        imageVector = Icons.Filled.Settings,
-                                        contentDescription = "Theme Toggle"
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Image(
+                                        painter = painterResource(id = R.drawable.reminderlogo),
+                                        contentDescription = "App Logo",
+                                        modifier = Modifier.size(32.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(12.dp))
+                                    Text(
+                                        text = "Chronos",
+                                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
                                     )
                                 }
-                                DropdownMenu(
-                                    expanded = themeMenuExpanded,
-                                    onDismissRequest = { themeMenuExpanded = false }
-                                ) {
-                                    DropdownMenuItem(
-                                        text = { Text("System Default") },
-                                        onClick = {
-                                            themeMode = AppThemeMode.SYSTEM
-                                            themeMenuExpanded = false
-                                        }
-                                    )
-                                    DropdownMenuItem(
-                                        text = { Text("Light") },
-                                        onClick = {
-                                            themeMode = AppThemeMode.LIGHT
-                                            themeMenuExpanded = false
-                                        }
-                                    )
-                                    DropdownMenuItem(
-                                        text = { Text("Dark") },
-                                        onClick = {
-                                            themeMode = AppThemeMode.DARK
-                                            themeMenuExpanded = false
-                                        }
-                                    )
-                                }
-                                TextButton(onClick = { authViewModel.logout() }) {
-                                    Text("Logout")
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    IconButton(onClick = { themeMenuExpanded = true }) {
+                                        Icon(
+                                            imageVector = Icons.Filled.Settings,
+                                            contentDescription = "Theme Toggle"
+                                        )
+                                    }
+                                    DropdownMenu(
+                                        expanded = themeMenuExpanded,
+                                        onDismissRequest = { themeMenuExpanded = false }
+                                    ) {
+                                        DropdownMenuItem(
+                                            text = { Text("System Default") },
+                                            onClick = {
+                                                themeMode = AppThemeMode.SYSTEM
+                                                themeMenuExpanded = false
+                                            }
+                                        )
+                                        DropdownMenuItem(
+                                            text = { Text("Light") },
+                                            onClick = {
+                                                themeMode = AppThemeMode.LIGHT
+                                                themeMenuExpanded = false
+                                            }
+                                        )
+                                        DropdownMenuItem(
+                                            text = { Text("Dark") },
+                                            onClick = {
+                                                themeMode = AppThemeMode.DARK
+                                                themeMenuExpanded = false
+                                            }
+                                        )
+                                    }
+                                    TextButton(onClick = { authViewModel.logout() }) {
+                                        Text("Logout")
+                                    }
                                 }
                             }
                         }

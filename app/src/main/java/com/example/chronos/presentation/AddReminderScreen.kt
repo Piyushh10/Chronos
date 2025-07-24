@@ -40,12 +40,12 @@ fun AddReminderScreen(
     isEdit: Boolean = false,
     modifier: Modifier = Modifier
 ) {
-    var title by remember { mutableStateOf(existingReminder?.title ?: "") }
-    var notes by remember { mutableStateOf(existingReminder?.notes ?: "") }
-    var dateTime by remember { mutableStateOf(existingReminder?.dateTime ?: 0L) }
-    var dateTimeDisplay by remember { mutableStateOf(if (existingReminder != null) formatDateTime(existingReminder.dateTime) else "") }
+    var title by remember { mutableStateOf("") }
+    var notes by remember { mutableStateOf("") }
+    var dateTime by remember { mutableStateOf(0L) }
+    var dateTimeDisplay by remember { mutableStateOf("") }
     var imageUri by remember { mutableStateOf<Uri?>(null) }
-    var imageUrl by remember { mutableStateOf(existingReminder?.imageUrl) }
+    var imageUrl by remember { mutableStateOf<String?>(null) }
     var isUploading by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
     val context = LocalContext.current
@@ -56,6 +56,15 @@ fun AddReminderScreen(
             onReminderAdded()
             viewModel.resetReminderAdded()
         }
+    }
+
+    LaunchedEffect(existingReminder) {
+        title = existingReminder?.title ?: ""
+        notes = existingReminder?.notes ?: ""
+        dateTime = existingReminder?.dateTime ?: 0L
+        dateTimeDisplay = if (existingReminder != null) formatDateTime(existingReminder.dateTime) else ""
+        imageUri = null
+        imageUrl = existingReminder?.imageUrl
     }
 
     val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->

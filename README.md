@@ -4,8 +4,12 @@ Chronos is a modern Android app that empowers you to schedule and manage reminde
 
 ---
 
-## DEMO VIDEO LINK -
-https://youtu.be/8E3IGbCirc0
+## 🎥 Demo 
+
+[![Demo](https://img.youtube.com/vi/-Cvvxf7GKgE/mqdefault.jpg)]([https://youtu.be/VShRal99HYc](https://youtu.be/8E3IGbCirc0))
+
+
+_Click the image above to watch the 3-minute demo_
 
 ## ✨ Features
 

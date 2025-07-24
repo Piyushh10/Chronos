@@ -69,7 +69,7 @@ fun AddReminderScreen(
 
     val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         if (!granted) {
-            Toast.makeText(context, "Notification permission denied", Toast.LENGTH_SHORT).show()
+            // Removed Toast: Notification permission denied
         }
     }
 
@@ -184,12 +184,12 @@ fun AddReminderScreen(
                             message = notes,
                             triggerAtMillis = dateTime
                         )
-                        Toast.makeText(context, "Reminder scheduled!", Toast.LENGTH_SHORT).show()
+                        // Removed Toast: Reminder scheduled!
                     } else {
-                        Toast.makeText(context, "Reminder time must be in the future", Toast.LENGTH_SHORT).show()
+                        // Removed Toast: Reminder time must be in the future
                     }
                 } else {
-                    Toast.makeText(context, "Notification permission not granted", Toast.LENGTH_SHORT).show()
+                    // Removed Toast: Notification permission not granted
                 }
             },
             enabled = title.isNotBlank() && dateTime > 0 && !isUploading && (imageUrl != null || imageUri == null)

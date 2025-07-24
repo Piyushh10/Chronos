@@ -35,10 +35,10 @@ Chronos is a modern Android app that empowers you to schedule and manage reminde
 |                        |                        |                        |
 |------------------------|------------------------|------------------------|
 | ![s1](assets/s2.jpg)   | ![s2](assets/s3.jpg)   | ![s3](assets/s7.jpg)   |
-| ![s4](assets/s8.jpg)   | ![s5](assets/s5.jpg)   | ![s6](assets/s6.jpg)   |
-| ![s7](assets/s1.jpg)   | ![s8](assets/s4.jpg)   | ![s9](assets/s9.jpg)   |
-| ![s10](assets/s10.jpg) | ![s11](assets/s11.jpg) | ![s12](assets/s12.jpg) |
-| ![s13](assets/s13.jpg) |  
+| ![s4](assets/s8.jpg)   | ![s5](assets/s4.jpg)   | ![s6](assets/s1.jpg)   |
+| ![s7](assets/s11.jpg)   | ![s8](assets/s10.jpg)   | ![s9](assets/s6.jpg)   |
+| ![s10](assets/s12.jpg) | ![s11](assets/s13.jpg) | ![s12](assets/s5.jpg) |
+| ![s13](assets/s9.jpg) |  
 
 ---
 

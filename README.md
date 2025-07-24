@@ -42,9 +42,5 @@ Powered by [Pollinations AI](https://text.pollinations.ai/).
 
 ---
 
-## 📝 License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
 
 > Chronos isn’t just a reminder app—it’s a thoughtful digital companion.   

@@ -48,9 +48,4 @@ Powered by [Pollinations AI](https://text.pollinations.ai/).
 
 ---
 
-
-<<<<<<< HEAD
-> Chronos isn’t just a reminder app—it’s a thoughtful digital companion.    
-=======
-> Chronos isn’t just a reminder app—it’s a thoughtful digital companion.   
->>>>>>> 99f4344e326554b2dbd3b5c8b7bff8c8f7e1ddb8
+> Chronos isn’t just a reminder app—it’s a thoughtful digital companion.

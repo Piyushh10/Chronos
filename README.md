@@ -38,14 +38,16 @@ Chronos is a modern Android app that empowers you to schedule and manage reminde
 | ![s4](assets/s8.jpg)   | ![s5](assets/s4.jpg)   | ![s6](assets/s1.jpg)   |
 | ![s7](assets/s11.jpg)  | ![s8](assets/s10.jpg)   | ![s9](assets/s6.jpg)   |
 | ![s10](assets/s12.jpg) | ![s11](assets/s13.jpg) | ![s12](assets/s5.jpg) |
-| ![s13](assets/s9.jpg)  |  
+| ![s13](assets/s9.jpg) |  
 
 ---
 
 ## 🤖 AI Greeting API
 
-Powered by [Pollinations AI](https://text.pollinations.ai/).
+Using [Pollinations AI](https://text.pollinations.ai/).
 
 ---
 
+
 > Chronos isn’t just a reminder app—it’s a thoughtful digital companion.
+

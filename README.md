@@ -4,6 +4,9 @@ Chronos is a modern Android app that empowers you to schedule and manage reminde
 
 ---
 
+## DEMO VIDEO LINK -
+https://youtu.be/8E3IGbCirc0
+
 ## ✨ Features
 
 - **Google Sign-In**: Secure authentication with your Google account.

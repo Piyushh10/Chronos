@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun LoginScreen(onSignInResult: (Intent?, Activity) -> Unit) {
@@ -36,7 +37,7 @@ fun LoginScreen(onSignInResult: (Intent?, Activity) -> Unit) {
     }
     val gso = remember {
         GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("15815144479-6j5nrfu9pjtujbecl5pjjqpo3gfgo01t.apps.googleusercontent.com") 
+            .requestIdToken("15815144479-6j5nrfu9pjtujbecl5pjjqpo3gfgo01t.apps.googleusercontent.com")
             .requestEmail()
             .build()
     }
@@ -56,63 +57,69 @@ fun LoginScreen(onSignInResult: (Intent?, Activity) -> Unit) {
                     endY = 1200f,
                     tileMode = TileMode.Clamp
                 )
-            ),
-        contentAlignment = Alignment.Center
+            )
     ) {
-        Surface(
-            tonalElevation = 8.dp,
-            shadowElevation = 16.dp,
-            shape = MaterialTheme.shapes.large,
-            modifier = Modifier.padding(32.dp)
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 24.dp)
+                .systemBarsPadding(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Column(
+            Spacer(modifier = Modifier.height(64.dp))
+            // Logo
+            Image(
+                painter = painterResource(R.drawable.reminderlogo),
+                contentDescription = "App Logo",
+                modifier = Modifier.size(120.dp)
+            )
+            Spacer(modifier = Modifier.height(32.dp))
+            // App Name
+            Text(
+                text = "CHRONOS",
+                fontSize = 36.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+            // Slogan
+            Text(
+                text = "Your AI-powered reminder companion",
+                fontSize = 18.sp,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(modifier = Modifier.weight(1f))
+            // Google Sign-In Button
+            Button(
+                onClick = {
+                    val signInIntent = googleSignInClient.signInIntent
+                    launcher.launch(signInIntent)
+                },
+                shape = MaterialTheme.shapes.medium,
                 modifier = Modifier
-                    .padding(32.dp)
-                    .widthIn(min = 280.dp, max = 400.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .fillMaxWidth()
+                    .height(54.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color.White)
             ) {
                 Image(
-                    painter = painterResource(R.drawable.reminderlogo),
+                    painter = painterResource(R.drawable.ic_google),
                     contentDescription = "Google Logo",
-                    modifier = Modifier.size(70.dp)
+                    modifier = Modifier.size(24.dp)
                 )
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.width(12.dp))
                 Text(
-                    text = "CHRONOS",
-                    style = MaterialTheme.typography.headlineLarge.copy(fontWeight = FontWeight.Bold, fontSize = 36.sp),
-                    color = MaterialTheme.colorScheme.onSurface
+                    text = "Sign in with Google",
+                    color = Color.Black,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 18.sp
                 )
-                Spacer(modifier = Modifier.height(10.dp))
-                Text(
-                    text = "Your AI-powered reminder companion",
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
-                    fontSize = 18.sp,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(36.dp))
-                Button(
-                    onClick = {
-                        val signInIntent = googleSignInClient.signInIntent
-                        launcher.launch(signInIntent)
-                    },
-                    shape = MaterialTheme.shapes.medium,
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
-                ) {
-                    Image(
-                        painter = painterResource(R.drawable.ic_google),
-                        contentDescription = "Google Logo",
-                        modifier = Modifier.size(24.dp)
-                    )
-                    Spacer(modifier = Modifier.width(10.dp))
-                    Text(
-                        text = "Sign in with Google",
-                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
-                    )
-                }
             }
+            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
-} 
+}

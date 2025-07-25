@@ -47,17 +47,7 @@ fun LoginScreen(onSignInResult: (Intent?, Activity) -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        MaterialTheme.colorScheme.primary.copy(alpha = 0.15f),
-                        MaterialTheme.colorScheme.background
-                    ),
-                    startY = 0f,
-                    endY = 1200f,
-                    tileMode = TileMode.Clamp
-                )
-            )
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
             modifier = Modifier
